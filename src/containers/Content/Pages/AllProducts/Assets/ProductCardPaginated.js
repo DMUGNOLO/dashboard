@@ -5,14 +5,14 @@ import { useParams } from 'react-router-dom';
 
 export default function ProductCardPaginated({limit,metaNav,CurrentPage}){
     const [productsPage, setProductsPage] = useState([])
-    const [meta, setMeta] = useState([])
+    const [meta, setMeta] = useState(metaNav)
     let { page } = useParams();
     console.log(page)
-    console.log(metaNav)
-
+    console.log("metaNav Next" + metaNav.next)
+    console.log("meta Next" + meta.next)
 
     useEffect(()=>{
-        fetch(page == "Previous" ? meta.previous : page == "Next" ? metaNav.next : `https://energym.herokuapp.com/api/products?page=${page}&&limit=${limit}`)
+        fetch(page == "Previous" ? meta.previous : page == "Next" ? meta.next : `https://energym.herokuapp.com/api/products?page=${page}&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setProductsPage(data.data);

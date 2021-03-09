@@ -5,11 +5,11 @@ import { useParams } from 'react-router-dom';
 
 export default function UserCardPaginated({limit,metaNav,CurrentPage}){
     const [usersPage, setUsersPage] = useState([])
-    const [meta, setMeta] = useState([])
+    const [meta, setMeta] = useState(metaNav)
     let { page } = useParams();
 
     useEffect(()=>{
-        fetch(page == "Previous" ? meta.previous : page == "Next" ? metaNav.next : `https://energym.herokuapp.com/api/users?page=${page}&&limit=${limit}`)
+        fetch(page == "Previous" ? meta.previous : page == "Next" ? meta.next : `https://energym.herokuapp.com/api/users?page=${page}&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setUsersPage(data.data);
