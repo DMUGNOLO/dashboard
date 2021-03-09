@@ -7,10 +7,12 @@ export default function ProductCardPaginated({limit,metaNav,CurrentPage}){
     const [productsPage, setProductsPage] = useState([])
     const [meta, setMeta] = useState([])
     let { page } = useParams();
+    console.log(page)
+    console.log(metaNav)
 
-    console.log(meta.previous)
+
     useEffect(()=>{
-        fetch(page == "Previous" ? meta.previous : page == "Next" ? meta.next : `https://energym.herokuapp.com/api/products?page=${page}&&limit=${limit}`)
+        fetch(page == "Previous" ? meta.previous : page == "Next" ? metaNav.next : `https://energym.herokuapp.com/api/products?page=${page}&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setProductsPage(data.data);
@@ -18,6 +20,7 @@ export default function ProductCardPaginated({limit,metaNav,CurrentPage}){
             })
     }, [ CurrentPage ])
     
+    console.log(CurrentPage)
     
     return(
         <div className="container d-flex justify-content-around flex-wrap me-auto">

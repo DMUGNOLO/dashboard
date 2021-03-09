@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProductCard from './ProductCard';
 import ProductCardPaginated from './ProductCardPaginated';
 
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -16,6 +17,8 @@ export default function AllProductsCards(){
     const [meta, setMeta] = useState([])
     const [CurrentPage, setCurrentPage] = useState(1);
 
+
+    console.log(CurrentPage)
     let limit = 2;
 
     useEffect(()=>{
@@ -27,6 +30,7 @@ export default function AllProductsCards(){
             })
     }, [])
     
+    console.log(CurrentPage)
 
     function ChangePage(e, nro){
         setCurrentPage(nro)
