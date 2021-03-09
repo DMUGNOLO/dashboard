@@ -42,7 +42,7 @@ export default function AllRutinesCards(){
         <div className="d-flex flex-row">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary"> All Rutines </h6>
+                    <h6 className="m-0 font-weight-bold text-dark"> All Rutines </h6>
                 </div>
                 <br />
 

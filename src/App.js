@@ -24,7 +24,7 @@ export default function App() {
     <div id="wrapper">
       <Router>
 
-        <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
           <BrandIcon />
           <hr className="sidebar-divider my-0" />
           <Dashboard />
