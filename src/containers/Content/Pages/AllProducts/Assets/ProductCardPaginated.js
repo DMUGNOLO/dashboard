@@ -9,7 +9,7 @@ export default function ProductCardPaginated({limit,metaNav,CurrentPage}){
     let { page } = useParams();
 
     useEffect(()=>{
-        fetch(page == "Previous" ? meta.previous : page == "Next" ? meta.next : `http://localhost:3001/api/products?page=${page}&&limit=${limit}`)
+        fetch(page == "Previous" ? meta.previous : page == "Next" ? meta.next : `https://energym.herokuapp.com/api/products?page=${page}&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setProductsPage(data.data);

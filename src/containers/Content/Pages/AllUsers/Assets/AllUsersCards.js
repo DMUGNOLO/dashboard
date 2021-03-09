@@ -20,7 +20,7 @@ export default function AllRutinesCards(){
     let limit = 2;
 
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/users?page=1&&limit=${limit}`)
+        fetch(`https://energym.herokuapp.com/api/users?page=1&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setUsers(data.data);

@@ -10,7 +10,7 @@ export default function Index(){
     const [products, setProducts] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
+        fetch("https://energym.herokuapp.com/api/products")
             .then(results=>results.json())
             .then(data=>setProducts(data.data.reverse()))
     }, [])
@@ -29,7 +29,7 @@ export default function Index(){
     const [rutines, setRutines] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:3001/api/rutines")
+        fetch("https://energym.herokuapp.com/api/rutines")
             .then(results=>results.json())
             .then(data=>setRutines(data.data.reverse()))
     }, [])
@@ -41,7 +41,7 @@ export default function Index(){
     const [users, setUsers] = useState([])
 
         useEffect(()=>{
-            fetch("http://localhost:3001/api/users")
+            fetch("https://energym.herokuapp.com/api/users")
                 .then(results=>results.json())
                 .then(data=>setUsers(data.data))
         }, [])

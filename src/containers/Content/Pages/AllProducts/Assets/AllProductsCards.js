@@ -19,7 +19,7 @@ export default function AllProductsCards(){
     let limit = 2;
 
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/products?page=1&&limit=${limit}`)
+        fetch(`https://energym.herokuapp.com/api/products?page=1&&limit=${limit}`)
             .then(results=>results.json())
             .then(data=>{
                 setProducts(data.data);
